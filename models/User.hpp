@@ -38,11 +38,6 @@ public:
         return this->lastname;
     }
 
-    int getTaskId()
-    {
-        return this->taskId;
-    }
-
     string getEmail()
     {
         return this->email;
