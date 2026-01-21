@@ -22,11 +22,14 @@ public:
         BaseEntity();
     };
 
-    ~User() {}
+    User(string email, string password)
+    {
+        this->email = email;
+        this->password = password;
+    }
 
     User(string firstname, string lastname, string email, string password)
     {
-        this->id = ++User::id;
         this->firstname = firstname;
         this->lastname = lastname;
         this->email = email;
