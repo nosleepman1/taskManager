@@ -17,6 +17,13 @@ private:
     string password;
 
 public:
+    User()
+    {
+        BaseEntity();
+    };
+
+    ~User() {}
+
     User(string firstname, string lastname, string email, string password)
     {
         this->id = ++User::id;
@@ -36,11 +43,6 @@ public:
     string getLastname()
     {
         return this->lastname;
-    }
-
-    int getTaskId()
-    {
-        return this->taskId;
     }
 
     string getEmail()
