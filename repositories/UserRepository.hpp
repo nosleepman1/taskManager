@@ -19,7 +19,7 @@ public:
     }
     ~UserRepository();
 
-    void add(User user)
+    void save(User user)
     {
         ofstream f{this->path, ios::app};
 

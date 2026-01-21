@@ -7,7 +7,6 @@
 #include <fstream>
 
 using namespace std;
-template <typename T>
 
 class BaseRepository
 {
@@ -50,7 +49,7 @@ public:
         rename(tempPath.c_str(), toDelete.c_str());
     }
 
-    void update(int id, string file, const T &newLine)
+    void update(int id, string file, const string &newLine)
     {
         ifstream f(this->path + file);
         ofstream temp(this->path + "temp.txt");
