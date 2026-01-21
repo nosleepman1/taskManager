@@ -19,15 +19,19 @@ public:
     }
     ~UserRepository();
 
-    void add(User user)
+    void save(User user)
     {
         ofstream f{this->path, ios::app};
 
+        int id = this->getLastInsertId();
+
         if (f.is_open())
         {
-            f << user.getId() << " " << user.getFirstname() << " " << user.getLastname() << " " << user.getEmail() << " " << user.getPassword() << endl;
+            f << id++ << " " << user.getFirstname() << " " << user.getLastname() << " " << user.getEmail() << " " << user.getPassword() << endl;
         }
         f.close();
+
+        this->setLastInsertId(id);
     }
 };
 
